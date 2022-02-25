@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    border: 5px solid #28282B;
+    border-radius: 15px;
+    width: 640px;
+    height: 1000px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+}
+
+.calcContainer{
+    width: 100%;
+    height: 16.67%;
+    background-color: #28282B;
+    border: 1px solid #28282B;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    direction: column;
+    padding-right: 20px;
+}
+
+.calculo{
+    color: white;
+    font-weight: bolder;
+    font-size: 50px;
+}
+.calculoNuevo{
+    color: white;
+    font-weight: bolder;
+    font-size: 10px; 
+}
+
+.allbtns{
+    display: flex;
+    direction: column;
+    height: 83.33%;
+    width: 100%;
+    background-color: #28282B;
+}
+
+.numberContainer {
+    width: 75%;
+    height: 100%;
+    border: 2px solid #28282B;
+    
+}
+.clearContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    direction: row;
+    
+}
+.cContainer{
+    width: 66.67%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #969892;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.cContainer:hover{
+    cursor:pointer;
+    background-color: #a4c169;
+}
+.arrowContainer{
+    width: 34%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #969892;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.arrowContainer:hover{
+    cursor:pointer;
+    background-color: #a4c169;
+}
+.numbersContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    direction: row;
+    
+}
+.number{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #969892;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.number:hover{
+    cursor:pointer;
+    background-color: #a4c169;
+}
+.zeroContainer{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #969892;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.zeroContainer:hover{
+    cursor:pointer;
+    background-color: #a4c169;
+}
+.symbolsContainer{
+    width: 25%;
+    height: 100%;
+    border: 2px solid #28282B;
+    
+}
+.symbol{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #FFA500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.equalContainer{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #28282B;
+    border-radius: 15px;
+    background-color: #FFA500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+.symbol:hover{
+    cursor:pointer;
+    background-color: #ffa2ab;
+}
+.equalContainer:hover{
+    cursor:pointer;
+    background-color: #ffa2ab;
+}
