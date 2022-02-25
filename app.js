@@ -16,14 +16,16 @@ const todos = document.querySelector(".allbtns");
 
 function calculadora() {
   let clickSymbol = true;
-  let clickEqual = true
+  let clickEqual = true;
+  let clickNumbers = true;
   let result
   
   numberBtn.forEach((item) => {
     item.addEventListener("click", (event) => {
-      //parseInt(calculoNuevo.innerText)
-      if (clickEqual && "click") {
+      console.log(clickSymbol, clickEqual, 'click')
+      if (clickNumbers && "click") {
         clickSymbol = false;
+        clickEqual = true;
         parseInt(event.target.innerText)
         calculoNuevo.innerText += event.target.innerText
         let tipoNumero = parseInt(calculoNuevo.innerText) //para ver en consola sin funcion
@@ -42,16 +44,24 @@ function calculadora() {
       }
       if (!clickSymbol && "click") {
         clickSymbol = true;
+        clickEqual = false;
+        clickNumbers = true;
         calculoNuevo.innerText += event.target.innerText;
       }
     });
   });
 
   symbolBtnEqual.addEventListener("click", (event) => {
-    result = eval(calculoNuevo.innerText) // "4-5" --> 4-5 = -1
-    console.log(eval(calculoNuevo.innerText))
-    calculoNuevo.innerText = result
-    calculo.innerText = result
+   
+    if (clickEqual && 'click') {
+      clickEqual = false;
+      clickNumbers = false;
+      result = eval(calculoNuevo.innerText) // "4-5" --> 4-5 = -1
+      console.log(eval(calculoNuevo.innerText))
+      calculoNuevo.innerText = result
+      calculo.innerText = result
+    }
+      
   })
 
 }
