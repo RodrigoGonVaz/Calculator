@@ -31,8 +31,7 @@ function calculadora() {
       }
       if (calculoNuevo.innerText.length > 15) {
         clickNumbers = false;
-        maxNum.innerText = "Maximo de numeros. No piques mas 😆"
-
+        maxNum.innerText = "Maximo de numeros. No piques mas 😆";
       }
     });
   });
@@ -45,7 +44,7 @@ function calculadora() {
         clickEqual = false;
         clickNumbers = true;
         clickBorrar = true;
-        maxNum.innerText = ''
+        maxNum.innerText = "";
         if (event.target.innerText === "x") {
           calculoNuevo.innerText += "*";
         } else {
@@ -60,7 +59,7 @@ function calculadora() {
       clickEqual = false;
       clickNumbers = false;
       clickBorrar = false;
-      maxNum.innerText = ''
+      maxNum.innerText = "";
       result = eval(calculoNuevo.innerText); // "4-5" --> 4-5 = -1
       console.log(eval(calculoNuevo.innerText));
       calculoNuevo.innerText = result;
@@ -70,14 +69,15 @@ function calculadora() {
 
   //------------Funcion para Eliminar resultado-----------------//
   numberBtnC.addEventListener("click", (event) => {
-    maxNum.innerText = '';
+    clickNumbers = true;
+    maxNum.innerText = "";
     calculoNuevo.innerText = "";
     calculo.innerText = 0;
   });
 
   //------------Funcion para borrar uno a uno-----------------//
   numberBtnArrow.addEventListener("click", (event) => {
-    maxNum.innerText = '';
+    maxNum.innerText = "";
     if (clickBorrar) {
       clickSymbol = false;
       clickNumbers = true;
