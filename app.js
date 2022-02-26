@@ -1,4 +1,4 @@
-console.log("pruebaaaaa");
+console.log("Mexaverse");
 
 //DOM
 const numberBtnC = document.querySelector(".cContainer");
@@ -8,70 +8,95 @@ const numberBtn = document.querySelectorAll(".number");
 const symbolBtn = document.querySelectorAll(".symbol");
 const calculo = document.querySelector(".calculo");
 const calculoNuevo = document.querySelector(".calculoNuevo");
-const todos = document.querySelector(".allbtns");
-
-
-
-//callback Function
+const maxNum = document.querySelector(".maxNum");
 
 function calculadora() {
   let clickSymbol = true;
-  let clickEqual = true;
+  let clickEqual = false;
   let clickNumbers = true;
-  let result
-  
+  let clickBorrar = true;
+  let result;
+
+  //------------Funcion para los numeros-----------------//
   numberBtn.forEach((item) => {
     item.addEventListener("click", (event) => {
-      console.log(clickSymbol, clickEqual, 'click')
       if (clickNumbers && "click") {
         clickSymbol = false;
         clickEqual = true;
-        parseInt(event.target.innerText)
-        calculoNuevo.innerText += event.target.innerText
-        let tipoNumero = parseInt(calculoNuevo.innerText) //para ver en consola sin funcion
-        console.log(tipoNumero)
+        clickBorrar = true;
+        parseInt(event.target.innerText);
+        calculoNuevo.innerText += event.target.innerText;
       } else {
-        console.log('error')
+        console.log("error");
+      }
+      if (calculoNuevo.innerText.length > 15) {
+        clickNumbers = false;
+        maxNum.innerText = "Maximo de numeros. No piques mas 😆"
+
       }
     });
   });
 
-  
+  //------------Funcion para los symbols (/*-+)-----------------//
   symbolBtn.forEach((item) => {
     item.addEventListener("click", (event) => {
-      if (event.target.innerText === 'x') {
-        event.target.innerText = '*'
-      }
       if (!clickSymbol && "click") {
         clickSymbol = true;
         clickEqual = false;
         clickNumbers = true;
-        calculoNuevo.innerText += event.target.innerText;
+        clickBorrar = true;
+        maxNum.innerText = ''
+        if (event.target.innerText === "x") {
+          calculoNuevo.innerText += "*";
+        } else {
+          calculoNuevo.innerText += event.target.innerText;
+        }
       }
     });
   });
-
+  //------------Funcion para el igual o resultado (=)-----------------//
   symbolBtnEqual.addEventListener("click", (event) => {
-   
-    if (clickEqual && 'click') {
+    if (clickEqual && "click") {
       clickEqual = false;
       clickNumbers = false;
-      result = eval(calculoNuevo.innerText) // "4-5" --> 4-5 = -1
-      console.log(eval(calculoNuevo.innerText))
-      calculoNuevo.innerText = result
-      calculo.innerText = result
+      clickBorrar = false;
+      maxNum.innerText = ''
+      result = eval(calculoNuevo.innerText); // "4-5" --> 4-5 = -1
+      console.log(eval(calculoNuevo.innerText));
+      calculoNuevo.innerText = result;
+      calculo.innerText = result;
     }
-      
-  })
+  });
 
+  //------------Funcion para Eliminar resultado-----------------//
+  numberBtnC.addEventListener("click", (event) => {
+    maxNum.innerText = '';
+    calculoNuevo.innerText = "";
+    calculo.innerText = 0;
+  });
+
+  //------------Funcion para borrar uno a uno-----------------//
+  numberBtnArrow.addEventListener("click", (event) => {
+    maxNum.innerText = '';
+    if (clickBorrar) {
+      clickSymbol = false;
+      clickNumbers = true;
+      let newCalculoNuevo = calculoNuevo.innerText.substring(
+        0,
+        calculoNuevo.innerText.length - 1
+      );
+      calculoNuevo.innerText = newCalculoNuevo;
+    }
+  });
 }
+
 calculadora(); //Invocar funcion
 
-
-let algo  = "5+5+5*2"
-let result = eval(algo)
-console.log(result, typeof result)
-
+// let algo = "5+5+5*2";
+// let result = eval(algo);
+// let men = "";
+// let yess = "5+5+5*2" - "";
+// console.log(yess, typeof result);
 
 // numberBtn.addEventListener('click', function() {
 //     console.log('Number')
