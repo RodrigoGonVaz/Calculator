@@ -47,6 +47,8 @@ function calculadora() {
         maxNum.innerText = "";
         if (event.target.innerText === "x") {
           calculoNuevo.innerText += "*";
+        } else if (event.target.innerText === "÷"){
+          calculoNuevo.innerText += "/";
         } else {
           calculoNuevo.innerText += event.target.innerText;
         }
